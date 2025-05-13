@@ -1,0 +1,27 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1746717309911,
+      "tag": "0000_stiff_shooting_star",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1746719643639,
+      "tag": "0001_odd_joshua_kane",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1746842400197,
+      "tag": "0002_massive_night_nurse",
+      "breakpoints": true
+    }
+  ]
+}
