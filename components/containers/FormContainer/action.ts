@@ -1,7 +1,6 @@
 "use server";
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import { getServerSession } from "next-auth";
-import { revalidatePath } from "next/cache";
 import { z } from "zod";
 
 type FieldErrors = {
@@ -47,12 +46,9 @@ export async function actionFormLink(
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ ...parse.data, email: session?.user?.email }),
     }).then((res) => res.json());
-    revalidatePath("/", "page");
     return { message: "Success" };
   } catch (error) {
     console.log(error);
     return { message: "Failed" };
-  } finally {
-    revalidatePath("/", "page");
   }
 }

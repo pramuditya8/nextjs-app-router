@@ -7,11 +7,9 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { getToken } from "next-auth/jwt";
 import { signIn, useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-import { set } from "zod";
 
 export default function Login() {
   const [showPage, setShowPage] = useState(false);
@@ -24,7 +22,7 @@ export default function Login() {
     } else if (session?.status === "unauthenticated") {
       setShowPage(true);
     }
-  }, [session]);
+  }, [session, router]);
 
   return (
     <>

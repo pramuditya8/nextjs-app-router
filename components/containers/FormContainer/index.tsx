@@ -45,7 +45,7 @@ export default function FormContainer({
     if (state?.message === "Success") {
       onFinished?.();
     }
-  }, [state]);
+  }, [state, onFinished]);
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),

@@ -1,11 +1,5 @@
 "use client";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -19,7 +13,6 @@ import { Drawer, DrawerContent } from "@/components/ui/drawer";
 import { useState, useRef, useEffect } from "react";
 import { useSession, signOut } from "next-auth/react";
 import FormContainer from "@/components/containers/FormContainer";
-import { getToken } from "next-auth/jwt";
 import { useRouter } from "next/navigation";
 
 const fetcher = async (...args) => fetch(...args).then((res) => res.json());
@@ -34,7 +27,7 @@ export default function Home() {
     } else if (session?.status === "authenticated") {
       setShowPage(true);
     }
-  }, [session]);
+  }, [session, router]);
   const popoverRef = useRef<HTMLButtonElement | null>(null);
   const [showCreate, setShowCreate] = useState<boolean>(false);
   const [showEdit, setshowEdit] = useState<boolean>(false);
